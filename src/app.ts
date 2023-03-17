@@ -10,7 +10,7 @@ const getAllProducts = () => {
     const time = Math.random() * 5000
     return new Promise((resolve) => {
         setTimeout(async() => {
-            await client.set("allProducts", JSON.stringify([ "Produto 1", "Produto 2", "Produto 3"]), { EX : 10})
+            await client.set("allProducts", JSON.stringify([ "Produto 1", "Produto 2", "Produto 3"]), { EX : 10}) //expiration
             resolve([ "Produto 1", "Produto 2", "Produto 3"])
         }, 5000)
     })
